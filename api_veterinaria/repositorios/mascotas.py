@@ -18,6 +18,7 @@ class RepositorioMascotas(RepositorioBase[Mascota]):
             "raza",
             "fecha_nacimiento",
             "dueno_id",
+            "imagen_url",
         )
 
     def to_values(self, entity: Mascota) -> tuple[object, ...]:
@@ -32,6 +33,7 @@ class RepositorioMascotas(RepositorioBase[Mascota]):
             entity.raza,
             fecha_nacimiento,
             entity.dueno_id,
+            entity.imagen_url,
         )
 
     def from_row(self, row: sqlite3.Row) -> Mascota:
@@ -47,6 +49,7 @@ class RepositorioMascotas(RepositorioBase[Mascota]):
                 else None
             ),
             dueno_id=row["dueno_id"],
+            imagen_url=row["imagen_url"],
         )
 
     def existe_dueno(self, dueno_id: int) -> bool:

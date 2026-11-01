@@ -19,7 +19,9 @@ CREATE TABLE duenos (
 CREATE TABLE mascotas (
     id               INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre           TEXT NOT NULL CHECK (length(trim(nombre)) > 0),
-    especie          TEXT NOT NULL CHECK (especie IN ('perro', 'gato', 'ave', 'otro')),
+    especie          TEXT NOT NULL CHECK (
+        especie IN ('perro', 'gato', 'ave', 'gallina', 'caballo', 'vaca', 'otro')
+    ),
     raza             TEXT,
     fecha_nacimiento TEXT CHECK (
         fecha_nacimiento IS NULL OR date(fecha_nacimiento) IS NOT NULL

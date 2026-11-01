@@ -10,3 +10,4 @@ class Mascota:
     raza: str | None
     fecha_nacimiento: date | None
     dueno_id: int
+    imagen_url: str | None = None
